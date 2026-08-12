@@ -6,11 +6,11 @@ metadata:
 
 spec:
   tolerations:
-  - key: "app"
-    operator: "Equal"
-    value: "production"
-    effect: "NoSchedule"
+    - key: "app"
+      operator: "Equal"
+      value: "production"
+      effect: "NoSchedule"
 
   containers:
-  - name: nginx
-    image: nginx
+    - name: nginx
+      image: nginx
