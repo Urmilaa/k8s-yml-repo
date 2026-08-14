@@ -3,7 +3,6 @@ kind: ConfigMap
 
 metadata:
   name: mysql-config
-  namespace: mysql-lab
 
 data:
   MYSQL_DATABASE: accounts
