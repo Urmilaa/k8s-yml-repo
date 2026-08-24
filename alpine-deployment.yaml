@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: alpine-storage-demo
+  namespace: storage-lab
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: alpine-storage
+
+  template:
+    metadata:
+      labels:
+        app: alpine-storage
+
+    spec:
+      containers:
+
+      - name: alpine
+        image: alpine:latest
+
+        command:
+        - /bin/sh
+        - -c
+        - |
+          while true; do
+            echo "Alpine storage demo is running"
+            sleep 30
+          done
+
+        volumeMounts:
+
+        - name: storage
+          mountPath: /data
+
+      volumes:
+
+      - name: storage
+        persistentVolumeClaim:
+          claimName: alpine-pvc
