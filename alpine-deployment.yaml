@@ -3,8 +3,6 @@ kind: Deployment
 
 metadata:
   name: alpine-storage-demo
-  namespace: storage-lab
-
 spec:
   replicas: 1
 
