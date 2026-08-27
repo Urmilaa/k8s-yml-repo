@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: alpine-storage-demo1
+  name: alpine-storage-demo
 spec:
   replicas: 1
 
