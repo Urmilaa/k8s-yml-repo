@@ -1,24 +1,15 @@
 apiVersion: v1
-kind: PersistentVolume
+kind: PersistentVolumeClaim
 
 metadata:
-  name: local-pv
-  labels:
-    type: local
+  name: local-pvc
 
 spec:
-  capacity:
-    storage: 1Gi
-
-  volumeMode: Filesystem
-
   accessModes:
     - ReadWriteOnce
 
-  persistentVolumeReclaimPolicy: Retain
+  resources:
+    requests:
+      storage: 1Gi
 
   storageClassName: local-storage
-
-  hostPath:
-    path: /mnt/data
-    type: DirectoryOrCreate
